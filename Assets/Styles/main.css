@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
+  isolation: isolate;
+  background-image: url("../Images/background.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body::before {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.178);
+  content: "";
+  pointer-events: none;
+}
+
+.top_pfp,
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.top_pfp {
+  margin: 0;
+  width: min(250px, 40vw);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(80vw, 60rem);
+  min-height: 0;
+  background-color: transparent;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.back-link {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font: 1.25rem/1.4 system-ui, sans-serif;
+  text-shadow: 1px 1px 2px #333;
+}
+
+.page2-container .page-title {
+  margin-bottom: 1.5rem;
+}
+
+.page-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(80vw, 48rem);
+  min-height: 40vh;
+  margin-bottom: 1.5rem;
+  border-radius: 1rem;
+  background-color: rgb(255 255 255 / 75%);
+}
+
+.page-panel > :last-child {
+  margin-bottom: 2rem;
+}

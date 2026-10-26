@@ -1,0 +1,53 @@
+.button-link {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.button-link img {
+  display: block;
+  width: 160px;
+  height: 120px;
+  object-fit: contain;
+  transition: transform 200ms ease;
+}
+
+.button-link:hover img {
+  transform: scale(1.1);
+}
+
+.button-link::after {
+  position: absolute;
+  z-index: 2;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  width: max-content;
+  max-width: min(80vw, 26rem);
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.35rem;
+  background-color: rgb(0 0 0 / 85%);
+  color: white;
+  content: attr(href);
+  font: 0.75rem/1.4 system-ui, sans-serif;
+  overflow-wrap: anywhere;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -0.25rem);
+  transition: opacity 150ms ease, transform 150ms ease;
+  visibility: hidden;
+}
+
+.button-link:hover::after,
+.button-link:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  visibility: visible;
+}
+
+.button-link:focus-visible {
+  border-radius: 0.25rem;
+  outline: 3px solid #222;
+  outline-offset: 3px;
+}
